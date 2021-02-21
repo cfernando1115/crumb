@@ -1,0 +1,153 @@
+/*Colors
+Deeper Brown:D4A373
+Lighter Brown:FAEDCD
+Neutral:FEFAE0
+Lighter Green:E9EDC9
+Deeper Green:B1BB8F
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FAEDCD;
+    font-family: 'Poppins', sans-serif;
+}
+
+::placeholder{
+    color: #E9EDC9;
+}
+
+.container{
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: #FEFAE0;
+    color: #D4A373;
+    margin: 50px 100px;
+}
+
+.logo{
+    width: 40%;
+    padding-left: 15px;
+}
+
+.logo h1{
+    margin-bottom: 0;
+    font-size: 300%;
+}
+
+.logo p{
+    margin-top: -10px;
+    color: #b1bb8f;
+    font-weight: 300;
+    font-size: 100%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.search{
+    display: flex;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+header input{
+    width: 400px;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    color: #D4A373;
+}
+
+header input:focus{
+    outline: none;
+}
+
+header .links{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+header a{
+    outline: none;
+    color: #D4A373;
+    font-size: 200%;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+.add-recipe a,
+.bookmarks a{
+    font-size: 100%;
+    text-decoration: none;
+    margin-right: 30px;
+    color: #B1BB8F;
+}
+
+.add-recipe span,
+.bookmarks span{
+    margin-right: 10px;
+    color: #D4A373;
+    font-size: 125%;
+}
+
+.contents{
+    display: flex;
+    margin: 25px 0;
+    height: 800px;
+}
+
+.recipe-img{
+    margin-top: 30px;
+}
+
+.recipe{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.recipe-img{
+    height: 35%;
+}
+
+.recipe-title{
+    height: 5%;
+}
+
+.recipe-servings{
+    height: 10%;
+}
+
+.recipe-ingredients{
+    height: 40%;
+}
+
+.recipe-site{
+    height: 10%;
+}
+
+.search-results{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15px;
+    width: 40%;
+    padding-left: 15px;
+    background-color: #E9EDC9;
+}
+
+.search-results__list{
+    padding-top: 20px;
+    height: 90%;
+}
