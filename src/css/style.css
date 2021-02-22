@@ -27,6 +27,11 @@ body{
     margin: 50px 100px;
 }
 
+.logo-icon{
+    font-size: 300%;
+    padding-left: 15px;
+}
+
 .logo{
     width: 40%;
     padding-left: 15px;
@@ -105,17 +110,23 @@ header a{
 .contents{
     display: flex;
     margin: 25px 0;
-    height: 800px;
+    height: 1200px;
 }
 
 .recipe-img{
     margin-top: 30px;
+    overflow: hidden;
+}
+
+.recipe-img img{
+    max-width: 100%;
 }
 
 .recipe{
     display: flex;
     flex-direction: column;
     width: 60%;
+    margin: 0 15px 30px 0;
 }
 
 .recipe-img{
@@ -123,19 +134,67 @@ header a{
 }
 
 .recipe-title{
-    height: 5%;
+    height: 8%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-title h1{
+    font-weight: 300;
+    color: #D4A373;
 }
 
 .recipe-servings{
-    height: 10%;
+    height: 7%;
+    background-color: #FAEDCD;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 10%;
+}
+
+.recipe-servings p{
+    margin-right: 35px;
+    font-size:110%;
+}
+
+.recipe-servings p:nth-child(2){
+    margin-right:15px;
+}
+
+.recipe-servings p:last-child{
+    margin-left: auto;
+}
+
+.recipe-servings span{
+    font-size: 150%;
+}
+
+.recipe-icon{
+    margin-right:10px;
+}
+
+.recipe-servings a{
+    outline: none;
+    color: #D4A373;
 }
 
 .recipe-ingredients{
     height: 40%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.recipe-ingredients__column{
+    margin:2%;
+    width: 47%;
 }
 
 .recipe-site{
     height: 10%;
+    background-color: #FAEDCD;
 }
 
 .search-results{
@@ -150,4 +209,31 @@ header a{
 .search-results__list{
     padding-top: 20px;
     height: 90%;
+}
+
+.result-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    text-decoration: none;
+    outline: none;
+    color: #D4A373;
+}
+
+.result-image{
+    margin-right:5%;
+}
+
+.result-image img{
+    max-width: 150px;
+    overflow:hidden;
+    border-radius: 50%;
+}
+
+.result-title p{
+    margin:0;
+}
+
+.result-title p:first-child{
+    margin-top:25px;
 }

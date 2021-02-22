@@ -14,37 +14,67 @@
 <body>
     <div class="container">
         <header>
+            <i class="logo-icon fas fa-cookie-bite"></i>
             <div class="logo">
                 <h1>Crumb</h1>
                 <p>Your favorite recipes</p>
             </div>
             <div class="search" id="search">
                 <input type="text" placeholder="search for recipes">
-                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#/"><i class="fas fa-search"></i></a>
             </div>
             <div class="links">
                 <div class="add-recipe" id="add-recipe">
-                    <a href="#"><span><i class="far fa-edit"></i></span>Add recipe</a>
+                    <a href="#/"><span><i class="far fa-edit"></i></span>Add recipe</a>
                 </div>
                 <div class="bookmarks" id="bookmarks">
-                    <a href="#"><span><i class="far fa-bookmark"></i></span>Bookmarks</a>
+                    <a href="#/"><span><i class="far fa-bookmark"></i></span>Bookmarks</a>
                 </div>
             </div>
         </header>
         <div class="contents">
             <div class="search-results">
                 <div class="search-results__list">
-                    here are the search results
+                    <a href="#/" class="result-container">
+                        <div class="result-image">
+                            <img src="src/img/testresultpic.jpg" alt="">
+                        </div>
+                        <div class="result-title">
+                            <p><strong>Here is the result title</strong></p>
+                            <p>Here is the result source site</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="search-results__pagination">
                     here is the pagination
                 </div>
             </div>
             <div class="recipe">
-                <div class="recipe-img">here is the image</div>
-                <div class="recipe-title">here is the title</div>
-                <div class="recipe-servings">here is the serving info</div>
-                <div class="recipe-ingredients">here are the ingredients</div>
+                <div class="recipe-img">
+                    <img src="./src/img/testpic.jpg" alt="test food picture">
+                </div>
+                <div class="recipe-title">
+                    <h1>here is the title of the recipe</h1>
+                </div>
+                <div class="recipe-servings">
+                    <p><i class="recipe-icon far fa-clock"></i>60 MINUTES</p>
+                    <p><i class="recipe-icon fas fa-user-friends"></i>4 SERVINGS</p>
+                    <p>
+                        <a href="#/"><i class="recipe-icon far fa-plus-square"></i></a>
+                        <a href="#/"><i class="recipe-icon far fa-minus-square"></i></a>
+                    </p>
+                    <p>
+                        <a href="#/"><span><i class="far fa-bookmark"></i></span></a>
+                    </p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="recipe-ingredients__column">
+                        <p><i class="recipe-icon fas fa-check"></i>here is an ingredient</p>
+                    </div>
+                    <div class="recipe-ingredients__column">
+                        <p><i class="recipe-icon fas fa-check"></i>here is an ingredient</p>
+                    </div>
+                </div>
                 <div class="recipe-site">here is the link to site</div>
             </div>
         </div>
