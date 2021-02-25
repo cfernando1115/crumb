@@ -1,8 +1,17 @@
 import View from "./view.js";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const showRecipe = async function () {
     try {
-        const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886');
+        const recipeContainer = document.querySelector('.recipe');
+        renderSpinner(recipeContainer);
+        const id = window.location.hash.slice(1);
+        console.log(id);
+        if (!id) {
+            return;
+        }
+        const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
         const data = await res.json();
 
         if (!res.ok) {
@@ -21,11 +30,10 @@ const showRecipe = async function () {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(recipe.ingredients.length);
 
         const markup = `
         <div class="recipe-img">
-            <img src="${recipe.image}" alt="test food picture">
+            <img src="${recipe.image}" alt="${recipe.title}">
         </div>
         <div class="recipe-title">
             <h1>${recipe.title}</h1>
@@ -42,26 +50,50 @@ const showRecipe = async function () {
             </p>
         </div>
         <div class="recipe-ingredients">
-            <div class="recipe-ingredients__row">
-                <p class="ingredient"><i class="recipe-icon fas fa-check"></i>here is an ingredient</p>
-                <p class="ingredient"><i class="recipe-icon fas fa-check"></i>here is an ingredient</p>
-            </div>
-            <div class="recipe-ingredients__row">
-                <p><i class="recipe-icon fas fa-check"></i>here is an ingredient</p>
-            </div>
+            ${generateIngredients(recipe.ingredients)}
         </div>
         <div class="recipe-site">
             <h3>Would you like to see more from ${recipe.publisher}?</h3>
             <p>Click <a href="${recipe.sourceUrl}">Here</a></p>
         </div>
         `;
-        const recipeContainer = document.querySelector('.recipe');
         recipeContainer.innerHTML = '';
         recipeContainer.insertAdjacentHTML('afterbegin', markup);
         
     } catch (error) {
         alert(error);
     }
+
+    function generateIngredients(ingredients){
+        let ingredientMarkup = '';
+        for (let i = 0; i < ingredients.length; i += 2){
+            ingredientMarkup +=    
+                `<div class="recipe-ingredients__row">
+                    <span class="recipe-ingredients__icon"><i class="recipe-icon fas fa-check"></i></span><p class="ingredient">${ingredients[i].quantity} ${ingredients[i].unit} ${ingredients[i].description}</p>
+                `;
+            ingredients[i + 1]
+                ? ingredientMarkup +=
+                    `
+                        <span class="recipe-ingredients__icon"><i class="recipe-icon fas fa-check"></i></span><p class="ingredient">${ingredients[i + 1].quantity} ${ingredients[i + 1].unit} ${ingredients[i + 1].description}</p>
+                    </div>
+                    `           
+                : ingredientMarkup += `</div>`;
+            
+        }
+        return ingredientMarkup;
+    }
+
+    function renderSpinner(parentEl) {
+        const markup = '<div class="loader"></div>';
+        parentEl.innerHTML = '';
+        parentEl.insertAdjacentHTML('afterbegin', markup);
+    }
+
 };
 
 showRecipe();
+
+['hashchange', 'load'].forEach(ev => {
+    window.addEventListener(ev, showRecipe);
+})
+

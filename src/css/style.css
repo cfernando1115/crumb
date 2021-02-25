@@ -16,7 +16,7 @@ body{
 }
 
 ::placeholder{
-    color: #E9EDC9;
+    color: #B1BB8F;
 }
 
 .container{
@@ -27,13 +27,15 @@ body{
     margin: 50px 100px;
 }
 
+/*Header*/
+
 .logo-icon{
     font-size: 300%;
     padding-left: 15px;
 }
 
 .logo{
-    width: 40%;
+    width: 38%;
     padding-left: 15px;
 }
 
@@ -57,7 +59,7 @@ header{
 
 .search{
     display: flex;
-    margin-left: 15px;
+    margin-left: 0;
     margin-top: 10px;
 }
 
@@ -107,11 +109,15 @@ header a{
     font-size: 125%;
 }
 
+/*Everything below the header*/
+
 .contents{
     display: flex;
     margin: 25px 0;
-    height: 1200px;
+    height: 1400px;
 }
+
+/*Recipe container*/
 
 .recipe-img{
     margin-top: 30px;
@@ -122,17 +128,19 @@ header a{
 
 .recipe-img img{
     width:100%;
+    height: auto;
 }
 
 .recipe{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 60%;
     margin: 0 15px 30px 0;
 }
 
 .recipe-img{
-    height: 35%;
+    width: 100%;
 }
 
 .recipe-title{
@@ -154,6 +162,7 @@ header a{
     align-items: center;
     justify-content: center;
     padding:0 10%;
+    width: 100%;
 }
 
 .recipe-servings p{
@@ -188,13 +197,23 @@ header a{
     flex-direction: column;
     align-items: flex-start;
     justify-content: left;
+    width: 100%;
 }
 
 .recipe-ingredients__row{
     display: flex;
     flex-direction: row;
-    margin: 2%;
+    margin: 0 2%;
     width: 94%;
+    font-size: 80%;
+}
+
+.recipe-ingredients__row:first-child{
+    margin-top: 2%;
+}
+
+.recipe-ingredients__icon{
+    margin-top: 2%;
 }
 
 .ingredient{
@@ -207,6 +226,7 @@ header a{
     justify-content: center;
     align-items: center;
     height: 10%;
+    width: 100%;
     background-color: #FAEDCD;
 }
 
@@ -223,6 +243,8 @@ header a{
     margin-top: 0;
 }
 
+/*Search container*/
+
 .search-results{
     display: flex;
     flex-direction: column;
@@ -235,6 +257,7 @@ header a{
 .search-results__list{
     padding-top: 20px;
     height: 90%;
+    list-style-type: none;
 }
 
 .result-container{
@@ -262,4 +285,48 @@ header a{
 
 .result-title p:first-child{
     margin-top:25px;
+}
+
+/*Loader*/
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid #B1BB8F;
+  border-right: 1.1em solid #B1BB8F;
+  border-bottom: 1.1em solid #B1BB8F;
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
