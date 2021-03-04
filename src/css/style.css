@@ -287,6 +287,18 @@ header a{
     margin-top:25px;
 }
 
+.message{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-icon{
+    font-size: 150%;
+}
+
 /*Loader*/
 
 .loader,
