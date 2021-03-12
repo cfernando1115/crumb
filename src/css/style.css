@@ -19,12 +19,20 @@ body{
     color: #B1BB8F;
 }
 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+
 .container{
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     background-color: #FEFAE0;
     color: #D4A373;
-    margin: 50px 100px;
+    width: 70%;
+    margin-top: 50px;
+
 }
 
 /*Header*/
@@ -35,7 +43,7 @@ body{
 }
 
 .logo{
-    width: 38%;
+    width: 30%;
     padding-left: 15px;
 }
 
@@ -261,7 +269,7 @@ header button{
 
 .search-results__list{
     padding-top: 20px;
-    height: 90%;
+    height: 92%;
     list-style-type: none;
 }
 
@@ -313,6 +321,25 @@ header button{
 
 .message-icon{
     font-size: 150%;
+}
+
+.search-results__pagination{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+.search-results__pagination button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 125%;
+    cursor: pointer;
+    color: #D4A373;
+}
+
+.search-results__pagination--next{
+    margin-left: auto;
 }
 
 /*Loader*/

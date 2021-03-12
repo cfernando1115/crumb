@@ -1,11 +1,6 @@
 export default class View{
     _data;
 
-    
-    _clear() {
-        this._parentElement.innerHTML = '';
-    }
-
     render(data) {
         if (!data || (Array.isArray(data) && data.length === 0)) {
             return this.renderError();
@@ -42,5 +37,9 @@ export default class View{
         `;
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    }
+    
+    _clear() {
+        this._parentElement.innerHTML = '';
     }
 }
