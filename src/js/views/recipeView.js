@@ -1,53 +1,15 @@
+import View from './view.js';
 
-class RecipeView{
+class RecipeView extends View{
     _parentElement = document.querySelector('.recipe');
-    _data;
     _errorMessage = 'We could not find your recipe!';
     _message = 'Start by searching for a recipe!';
 
-    render(data) {
-        this._data = data;
-        const markup = this._generateMarkup();
-        this._clear();
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    }
-
-    renderError(message = this._errorMessage) {
-        const markup = `
-        <div class="error">
-            <i class="fas fa-exclamation-circle"></i>
-            <p>${message}</p>
-        </div>
-        `;
-        this._clear();
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    }
-
-    renderMessage(message = this._message) {
-        const markup = `
-        <div class="message">
-            <i class="message-icon fas fa-smile"></i>
-            <p>${message}</p>
-        </div>
-        `;
-        this._clear();
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    }
-
-    renderSpinner() {
-        const markup = '<div class="loader"></div>';
-        this._parentElement.innerHTML = '';
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    }
 
     addHandlerRender(handler) {
         ['hashchange', 'load'].forEach(ev => {
             window.addEventListener(ev, handler);
         })        
-    }
-
-    _clear() {
-        this._parentElement.innerHTML = '';
     }
 
     _generateMarkup() {

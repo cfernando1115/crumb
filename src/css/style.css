@@ -86,12 +86,15 @@ header .links{
     padding-right: 30px;
 }
 
-header a{
-    outline: none;
+header button{
     color: #D4A373;
     font-size: 200%;
     margin-left: 10px;
     padding-top: 5px;
+    border:none;
+    background-color:transparent;
+    outline:none;
+    cursor: pointer;
 }
 
 .add-recipe a,
@@ -124,6 +127,7 @@ header a{
     overflow: hidden;
     display:flex;
     justify-content: center;
+    height: 35%;
 }
 
 .recipe-img img{
@@ -217,7 +221,8 @@ header a{
 }
 
 .ingredient{
-    width: 50%;
+    width: 45%;
+    margin-right: 5%;
 }
 
 .recipe-site{
@@ -250,7 +255,7 @@ header a{
     flex-direction: column;
     margin: 30px 15px;
     width: 40%;
-    padding-left: 15px;
+    padding-left: 5px;
     background-color: #E9EDC9;
 }
 
@@ -260,9 +265,17 @@ header a{
     list-style-type: none;
 }
 
+.search-results__list li{
+    margin-bottom: 5px;
+}
+
+.search-results__list li:first-child{
+    margin-top: 15px;
+}
+
 .result-container{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: left;
     text-decoration: none;
     outline: none;
@@ -274,20 +287,23 @@ header a{
 }
 
 .result-image img{
-    max-width: 150px;
+    width: 75px;
+    height: 75px;
     overflow:hidden;
     border-radius: 50%;
 }
 
 .result-title p{
     margin:0;
+    font-size: 80%;
 }
 
 .result-title p:first-child{
-    margin-top:25px;
+    font-weight: 600;
 }
 
-.message{
+.message, 
+.error{
     margin-top: 30px;
     display: flex;
     flex-direction: column;
