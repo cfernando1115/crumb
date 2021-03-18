@@ -12,6 +12,34 @@ class RecipeView extends View{
         })        
     }
 
+    addHandlerUpdateServings(handler) {
+        this._parentElement.addEventListener('click', function (e) {
+            const btn = e.target.closest('.serving-btn');
+            if (!btn) {
+                return;
+            }
+            const updateTo = +btn.dataset.updateTo;
+            if (updateTo > 0) {
+                handler(updateTo);
+            }
+        })
+    }
+
+    renderServings(data) {
+        //first effort to update servings/ingredients without re-rendering entire recipe
+        const recipeServings = document.querySelector('.recipe-servings');
+        const recipeIngredients = document.querySelector('.recipe-ingredients');
+
+        recipeServings.innerHTML = '';
+        recipeIngredients.innerHTML = '';
+
+        const servingsMarkup = this._generateServings(data);
+        const ingredientsMarkup = this._generateIngredients(data.ingredients);
+
+        recipeServings.insertAdjacentHTML('afterbegin', servingsMarkup);
+        recipeIngredients.insertAdjacentHTML('afterbegin', ingredientsMarkup);
+    }
+
     _generateMarkup() {
         return `
         <div class="recipe-img">
@@ -21,18 +49,10 @@ class RecipeView extends View{
             <h1>${this._data.title}</h1>
         </div>
         <div class="recipe-servings">
-            <p><i class="recipe-icon far fa-clock"></i>${this._data.cookingTime} MINUTES</p>
-            <p><i class="recipe-icon fas fa-user-friends"></i>${this._data.servings} SERVINGS</p>
-            <p>
-                <a href="#/"><i class="recipe-icon far fa-plus-square"></i></a>
-                <a href="#/"><i class="recipe-icon far fa-minus-square"></i></a>
-            </p>
-            <p>
-                <a href="#/"><span><i class="far fa-bookmark"></i></span></a>
-            </p>
+            ${this._generateServings()}
         </div>
         <div class="recipe-ingredients">
-            ${this._generateIngredients(this._data.ingredients)}
+            ${this._generateIngredients()}
         </div>
         <div class="recipe-site">
             <h3>Would you like to see more from ${this._data.publisher}?</h3>
@@ -41,7 +61,21 @@ class RecipeView extends View{
         `;
     }
 
-    _generateIngredients(ingredients){
+    _generateServings(data = this._data) {
+        return `
+        <p><i class="recipe-icon far fa-clock"></i>${data.cookingTime} MINUTES</p>
+        <p><i class="recipe-icon fas fa-user-friends"></i>${data.servings} SERVINGS</p>
+        <p>
+            <button class="serving-btn" data-update-to="${data.servings+1}"><i class="recipe-icon far fa-plus-square"></i></button>
+            <button class="serving-btn" data-update-to="${data.servings-1}"><i class="recipe-icon far fa-minus-square"></i></button>
+        </p>
+        <p>
+            <button href="#/"><span><i class="far fa-bookmark"></i></span></button>
+        </p>
+        `;
+    }
+
+    _generateIngredients(ingredients = this._data.ingredients){
         let ingredientMarkup = '';
         for (let i = 0; i < ingredients.length; i += 2){
             ingredientMarkup +=    
