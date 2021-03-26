@@ -13,7 +13,7 @@
 - [x] Active Result View
 - [x] Servings Update
 - [ ] Local Storage
-- [ ] Bookmarking
+- [x] Bookmarking
 - [ ] Recipe Upload Functionality
 
 

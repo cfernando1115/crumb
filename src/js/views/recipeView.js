@@ -25,18 +25,34 @@ class RecipeView extends View{
         })
     }
 
-    renderServings(data) {
-        //first effort to update servings/ingredients without re-rendering entire recipe
-        const recipeServings = document.querySelector('.recipe-servings');
+    addHandlerAddBookmark(handler) {
+        this._parentElement.addEventListener('click', function (e) {
+            const btn = e.target.closest('.bookmark-btn');
+
+            if (!btn) {
+                return;
+            }
+
+            handler();
+        })
+    }
+
+    renderServings(data, all = true) {
+        //if all === false, only servings container will be re-rendered (for bookmarks)
+        if (all === false) {
+            const recipeServings = document.querySelector('.recipe-servings');
+            recipeServings.innerHTML = '';
+            const servingsMarkup = this._generateServings(data);
+            recipeServings.insertAdjacentHTML('afterbegin', servingsMarkup);
+            return;
+        }
+        
         const recipeIngredients = document.querySelector('.recipe-ingredients');
 
-        recipeServings.innerHTML = '';
         recipeIngredients.innerHTML = '';
 
-        const servingsMarkup = this._generateServings(data);
         const ingredientsMarkup = this._generateIngredients(data.ingredients);
 
-        recipeServings.insertAdjacentHTML('afterbegin', servingsMarkup);
         recipeIngredients.insertAdjacentHTML('afterbegin', ingredientsMarkup);
     }
 
@@ -70,7 +86,7 @@ class RecipeView extends View{
             <button class="serving-btn" data-update-to="${data.servings-1}"><i class="recipe-icon far fa-minus-square"></i></button>
         </p>
         <p>
-            <button href="#/"><span><i class="far fa-bookmark"></i></span></button>
+            <button class="bookmark-btn"><span><i class="${data.bookmarked ? 'fas fa-bookmark' : 'far fa-bookmark'}"></i></span></button>
         </p>
         `;
     }

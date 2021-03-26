@@ -1,12 +1,15 @@
 export default class View{
     _data;
 
-    render(data) {
+    render(data, render = true) {
         if (!data || (Array.isArray(data) && data.length === 0)) {
             return this.renderError();
         }
         this._data = data;
         const markup = this._generateMarkup();
+        if (!render) {
+            return markup;
+        }
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
@@ -37,6 +40,19 @@ export default class View{
         `;
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    }
+
+    updateActive(id) {
+        const results = this._parentElement.querySelectorAll('.result-container');
+        results.forEach(res => {
+            const resId = res.hash.slice(1);
+            if (res.classList.contains('result-active') && resId !== id) {
+                res.classList.remove('result-active');
+            }
+            if (resId === id) {
+                res.classList.add('result-active');
+            }
+        })
     }
     
     _clear() {
