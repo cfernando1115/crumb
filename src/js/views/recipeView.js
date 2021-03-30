@@ -37,23 +37,21 @@ class RecipeView extends View{
         })
     }
 
-    renderServings(data, all = true) {
+    renderServings(data, all = true) {    
+        const recipeServings = document.querySelector('.recipe-servings');
+        recipeServings.innerHTML = '';
+
+        const servingsMarkup = this._generateServings(data);
+        recipeServings.insertAdjacentHTML('afterbegin', servingsMarkup);
+
         //if all === false, only servings container will be re-rendered (for bookmarks)
-        if (all === false) {
-            const recipeServings = document.querySelector('.recipe-servings');
-            recipeServings.innerHTML = '';
-            const servingsMarkup = this._generateServings(data);
-            recipeServings.insertAdjacentHTML('afterbegin', servingsMarkup);
-            return;
+        if (all === true) {                   
+            const recipeIngredients = document.querySelector('.recipe-ingredients');
+            recipeIngredients.innerHTML = '';
+
+            const ingredientsMarkup = this._generateIngredients(data.ingredients);
+            recipeIngredients.insertAdjacentHTML('afterbegin', ingredientsMarkup);
         }
-        
-        const recipeIngredients = document.querySelector('.recipe-ingredients');
-
-        recipeIngredients.innerHTML = '';
-
-        const ingredientsMarkup = this._generateIngredients(data.ingredients);
-
-        recipeIngredients.insertAdjacentHTML('afterbegin', ingredientsMarkup);
     }
 
     _generateMarkup() {

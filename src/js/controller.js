@@ -29,6 +29,7 @@ const controlRecipes = async function () {
         }
 
         if (model.state.bookmarks.length > 0) {
+            bookmarksView.render(model.state.bookmarks);
             bookmarksView.updateActive(id);
         }
     } catch (error) {

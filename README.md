@@ -12,7 +12,7 @@
 - [x] Result Pagination
 - [x] Active Result View
 - [x] Servings Update
-- [ ] Local Storage
+- [x] Local Storage
 - [x] Bookmarking
 - [ ] Recipe Upload Functionality
 
