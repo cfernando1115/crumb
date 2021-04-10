@@ -1,4 +1,3 @@
-import { Obj } from 'prelude-ls';
 import View from './view.js';
 
 class AddRecipeView extends View{
