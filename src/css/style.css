@@ -6,26 +6,26 @@ Lighter Green:E9EDC9
 Deeper Green:B1BB8F
 */
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #FAEDCD;
     font-family: 'Poppins', sans-serif;
 }
 
-::placeholder{
+::placeholder {
     color: #B1BB8F;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;;
 }
 
-.container{
+.container {
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     background-color: #FEFAE0;
@@ -34,7 +34,7 @@ body{
     margin-top: 50px;
 }
 
-button{
+button {
     border:none;
     background-color:transparent;
     outline:none;
@@ -43,41 +43,41 @@ button{
 
 /*Header*/
 
-.logo-icon{
+.logo-icon {
     font-size: 300%;
     padding-left: 15px;
 }
 
-.logo{
+.logo {
     width: 30%;
     padding-left: 15px;
 }
 
-.logo h1{
+.logo h1 {
     margin-bottom: 0;
     font-size: 300%;
 }
 
-.logo p{
+.logo p {
     margin-top: -10px;
     color: #b1bb8f;
     font-weight: 300;
     font-size: 100%;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.search{
+.search {
     display: flex;
     margin-left: 20px;
     margin-top: 10px;
 }
 
-header input{
+header input {
     width: 350px;
     padding: 15px;
     border-radius: 14px;
@@ -87,11 +87,11 @@ header input{
     color: #D4A373;
 }
 
-header input:focus{
+header input:focus {
     outline: none;
 }
 
-header .links{
+header .links {
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ header .links{
     margin-right: 20px;
 }
 
-header button{
+header button {
     color: #D4A373;
     font-size: 200%;
     margin-left: 10px;
@@ -108,12 +108,12 @@ header button{
 }
 
 .add-recipe,
-.bookmarks{
+.bookmarks {
     width: 200px;
 }
 
 .add-recipe button,
-.bookmarks button{
+.bookmarks button {
     font-size: 100%;
     text-decoration: none;
     margin-right: 20px;
@@ -121,7 +121,7 @@ header button{
 }
 
 .add-recipe button span,
-.bookmarks button span{
+.bookmarks button span {
     margin-right: 10px;
     font-size: 125%;
 }
@@ -154,7 +154,7 @@ header button{
 
 /*Everything below the header*/
 
-.contents{
+.contents {
     display: flex;
     margin: 25px 0;
     height: 1800px;
@@ -162,7 +162,7 @@ header button{
 
 /*Recipe container*/
 
-.recipe-img{
+.recipe-img {
     margin-top: 30px;
     overflow: hidden;
     display:flex;
@@ -170,12 +170,12 @@ header button{
     height: 35%;
 }
 
-.recipe-img img{
+.recipe-img img {
     width:100%;
     height: auto;
 }
 
-.recipe{
+.recipe {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,65 +183,65 @@ header button{
     margin: 0 15px 30px 0;
 }
 
-.recipe-img{
+.recipe-img {
     width: 100%;
 }
 
-.recipe-title{
+.recipe-title {
     height: 8%;
     display:flex;
     align-items: center;
     justify-content: center;
 }
 
-.recipe-title h1{
+.recipe-title h1 {
     font-weight: 300;
     color: #D4A373;
 }
 
-.recipe-servings{
+.recipe-servings {
     height: 7%;
     background-color: #FAEDCD;
     display:flex;
     align-items: center;
     justify-content: center;
-    padding:0 10%;
+    padding:0 5%;
     width: 100%;
 }
 
-.recipe-servings button{
+.recipe-servings button {
     color: #D4A373;
     padding: 0;
 }
 
-.recipe-servings p{
+.recipe-servings p {
     margin-right: 35px;
     font-size:110%;
 }
 
-.recipe-servings p:nth-child(2){
+.recipe-servings p:nth-child(2) {
     margin-right: 15px;
 }
 
-.recipe-servings p:last-child{
-    margin-left: auto;
+.recipe-servings p:last-child {
+    margin-right: 10px;
 }
 
-.recipe-servings span{
+.recipe-servings span {
     font-size: 175%;
 }
 
-.recipe-icon{
+.recipe-icon {
     margin-right:10px;
     font-size: 120%;
 }
 
-.recipe-servings a{
+.recipe-servings a {
     outline: none;
     color: #D4A373;
 }
 
-.recipe-ingredients{
+.recipe-ingredients {
     height: 40%;
     display: flex;
     flex-direction: column;
@@ -250,7 +250,7 @@ header button{
     width: 100%;
 }
 
-.recipe-ingredients__row{
+.recipe-ingredients__row {
     display: flex;
     flex-direction: row;
     margin: 0 2%;
@@ -258,20 +258,20 @@ header button{
     font-size: 80%;
 }
 
-.recipe-ingredients__row:first-child{
+.recipe-ingredients__row:first-child {
     margin-top: 2%;
 }
 
-.recipe-ingredients__icon{
+.recipe-ingredients__icon {
     margin-top: 2%;
 }
 
-.ingredient{
+.ingredient {
     width: 45%;
     margin-right: 5%;
 }
 
-.recipe-site{
+.recipe-site {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,13 +281,13 @@ header button{
     background-color: #FAEDCD;
 }
 
-.recipe-site h3{
+.recipe-site h3 {
     font-weight: 300;
     margin-bottom: 5px;
 }
 
 .recipe-site a,
-.recipe-site p{
+.recipe-site p {
     text-decoration: none;
     outline: none;
     color: #B1BB8F;
@@ -296,7 +296,7 @@ header button{
 
 /*Search container*/
 
-.search-results{
+.search-results {
     display: flex;
     flex-direction: column;
     margin: 30px 15px;
@@ -304,27 +304,26 @@ header button{
     background-color: #E9EDC9;
 }
 
-.search-results__list{
+.search-results__list {
     padding-top: 20px;
     height: 92%;
     list-style-type: none;
     padding-left: 0;
 }
 
-.search-results__list li{
-    /*margin-bottom: 5px;*/
+.search-results__list li {
     padding-left: 0;
 }
 
-.search-results__list li:first-child{
+.search-results__list li:first-child {
     margin-top: 15px;
 }
 
-.result-active{
+.result-active {
     background-color: #FEFAE0;
 }
 
-.result-container{
+.result-container {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -334,29 +333,34 @@ header button{
     padding: 5px;
 }
 
-.result-image{
+.result-image {
     margin-right: 5%;
     padding-left: 3px;
 }
 
-.result-image img{
+.result-image img {
     width: 75px;
     height: 75px;
     overflow:hidden;
     border-radius: 50%;
 }
 
-.result-title p{
+.result-title p {
     margin:0;
     font-size: 80%;
 }
 
-.result-title p:first-child{
+.result-title p:first-child {
     font-weight: 600;
 }
 
+.result-container div:last-child {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
 .message, 
-.error{
+.error {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -364,17 +368,17 @@ header button{
     align-items: center;
 }
 
-.message-icon{
+.message-icon {
     font-size: 150%;
 }
 
-.search-results__pagination{
+.search-results__pagination {
     display: flex;
     justify-content: left;
     padding: 10px;
 }
 
-.search-results__pagination button{
+.search-results__pagination button {
     background-color: transparent;
     border: none;
     outline: none;
@@ -383,7 +387,7 @@ header button{
     color: #D4A373;
 }
 
-.search-results__pagination--next{
+.search-results__pagination--next {
     margin-left: auto;
 }
 

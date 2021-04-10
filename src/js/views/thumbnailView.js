@@ -14,6 +14,7 @@ class ThumbnailView extends View{
                     <p>${this._data.title}</p>
                     <p>${this._data.publisher}</p>
                 </div>
+                <div><span><i class="far fa-user ${this._data.key ? '' : 'hidden'}"></i></span></div>
             </a>
         </li>
         `;

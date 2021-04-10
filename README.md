@@ -14,7 +14,7 @@
 - [x] Servings Update
 - [x] Local Storage
 - [x] Bookmarking
-- [ ] Recipe Upload Functionality
+- [x] Recipe Upload Functionality
 
 
 

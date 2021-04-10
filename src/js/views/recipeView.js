@@ -84,6 +84,9 @@ class RecipeView extends View{
             <button class="serving-btn" data-update-to="${data.servings-1}"><i class="recipe-icon far fa-minus-square"></i></button>
         </p>
         <p>
+            <button class="user-btn"><span><i class="far fa-user ${this._data.key ? '' : 'hidden'}"></i></span></button>
+        </p>
+        <p>
             <button class="bookmark-btn"><span><i class="${data.bookmarked ? 'fas fa-bookmark' : 'far fa-bookmark'}"></i></span></button>
         </p>
         `;
