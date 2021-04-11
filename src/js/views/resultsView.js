@@ -7,7 +7,7 @@ class ResultsView extends View {
     _message = '';
     
     _generateMarkup() {
-        return this._data.map(bookmark => thumbnailView.render(bookmark, false)).join('');
+        return this._data.map(result => thumbnailView.render(result, false)).join('');
     }
 }
 

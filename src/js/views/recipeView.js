@@ -70,7 +70,7 @@ class RecipeView extends View{
         </div>
         <div class="recipe-site">
             <h3>Would you like to see more from ${this._data.publisher}?</h3>
-            <p>Click <a href="${this._data.sourceUrl}">Here</a></p>
+            <p>Click <a target="_blank" href="${this._data.sourceUrl}">Here</a></p>
         </div>
         `;
     }
