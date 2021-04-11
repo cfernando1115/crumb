@@ -7,29 +7,27 @@
 ***
 ### Version Features
 
-- Recipe view
-        Image
-        Recipe name
-        Servings
-        Cook time
-        Ingredients
-        Link to recipe source
--Recipe search with results preview
-        Thumbnail image
-        Recipe name
-        Recipe source
--Search result pagination
--Active result view
--Servings update functionality
--Recipe bookmarking
-        Bookmarks save to local storage
--Recipe Upload Functionality
-        Uploaded recipes automatically bookmarked
-        Uploaded recipes display user badge
+* Recipe view
+   * Image
+   * Recipe name
+   * Servings
+   * Cook time
+   * Ingredients
+   * Link to recipe source
+* Recipe search with results preview
+   * Thumbnail image
+   * Recipe name
+   * Recipe source
+* Search result pagination
+* Active result view
+* Servings update functionality
+* Recipe bookmarking
+   * Bookmarks save to local storage
+* Recipe Upload Functionality
+   * Uploaded recipes automatically bookmarked
+   * Uploaded recipes display user badge
 
 ***
         
 #### Generate api key for full recipe upload functionality [here](https://forkify-api.herokuapp.com/v2)
-
-
 
