@@ -88,16 +88,24 @@ export const deleteBookmark = function (id) {
 
 export const uploadRecipe = async function (newRecipe) {
     try {
-        const ingredients = Object.entries(newRecipe)
-        .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
-        .map(ing => {
-            const ingArr = ing[1].split(',').map(i => i.trim());
-            if (ingArr.length !== 3) {
-                throw new Error('Wrong ingredient format');
-            }
-            const [quantity, unit, description] = ingArr;
-            return { quantity: quantity ? +quantity : null, unit, description };
-        });
+        const ingredients = [];
+        const ingredientEls = Object.entries(newRecipe)
+            .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '');
+                
+        if (ingredientEls.length % 3 !== 0) {
+            throw new Error('Wrong ingredient format');
+        }
+
+        //filter through all ingredient element keys and assign to each ingredient's properties
+        for (let i = 1; i <= ingredientEls.length / 3; i++) {
+            const [quantity] = ingredientEls.filter(el => el[0].includes(i) && el[0].includes('qty'));
+            const [unit] = ingredientEls.filter(el => el[0].includes(i) && el[0].includes('unit'));
+            const [description] = ingredientEls.filter(el => el[0].includes(i) && el[0].includes('desc'));
+
+            //add assembled ingredient to array
+            ingredients.push({ quantity: quantity[1] ? +quantity[1] : null, unit: unit[1], description: description[1] });
+        }
+
         const recipe = {
             title: newRecipe.title,
             source_url: newRecipe.sourceUrl,

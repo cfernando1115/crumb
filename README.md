@@ -29,5 +29,10 @@
 
 ***
         
-#### Generate api key for full recipe upload functionality [here](https://forkify-api.herokuapp.com/v2)
+#### Generate free api key for full recipe upload functionality [here](https://forkify-api.herokuapp.com/v2)
+
+***
+### CLI Instructions
+Install packages: `npm install`  
+Run app: `npm start`
 

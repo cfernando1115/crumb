@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /*Colors
 Deeper Brown:D4A373
 Lighter Brown:FAEDCD
@@ -7,7 +14,8 @@ Deeper Green:B1BB8F
 */
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -15,19 +23,42 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-input-placeholder {
+    color: #B1BB8F;
+}
+
+::-moz-placeholder {
+    color: #B1BB8F;
+}
+
+:-ms-input-placeholder {
+    color: #B1BB8F;
+}
+
+::-ms-input-placeholder {
+    color: #B1BB8F;
+}
+
 ::placeholder {
     color: #B1BB8F;
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;;
 }
 
 .container {
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     background-color: #FEFAE0;
     color: #D4A373;
     width: 70%;
@@ -66,12 +97,20 @@ button {
 }
 
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
 }
 
 .search {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-left: 20px;
     margin-top: 10px;
@@ -82,7 +121,8 @@ header input {
     padding: 15px;
     border-radius: 14px;
     border: none;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     background-color: white;
     color: #D4A373;
 }
@@ -93,9 +133,15 @@ header input:focus {
 
 header .links {
     margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-left: 30px;
     margin-right: 20px;
 }
@@ -137,7 +183,8 @@ header button {
     position: absolute;
     background-color: #E9EDC9;
     width: 300px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding-left: 0;
 }
@@ -155,6 +202,8 @@ header button {
 /*Everything below the header*/
 
 .contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 25px 0;
     height: 1800px;
@@ -165,8 +214,12 @@ header button {
 .recipe-img {
     margin-top: 30px;
     overflow: hidden;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 35%;
 }
 
@@ -176,9 +229,16 @@ header button {
 }
 
 .recipe {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 60%;
     margin: 0 15px 30px 0;
 }
@@ -189,9 +249,15 @@ header button {
 
 .recipe-title {
     height: 8%;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .recipe-title h1 {
@@ -202,9 +268,15 @@ header button {
 .recipe-servings {
     height: 7%;
     background-color: #FAEDCD;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding:0 5%;
     width: 100%;
 }
@@ -243,16 +315,30 @@ header button {
 
 .recipe-ingredients {
     height: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: left;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     width: 100%;
 }
 
 .recipe-ingredients__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 0 2%;
     width: 94%;
     font-size: 80%;
@@ -272,10 +358,19 @@ header button {
 }
 
 .recipe-site {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 10%;
     width: 100%;
     background-color: #FAEDCD;
@@ -297,8 +392,13 @@ header button {
 /*Search container*/
 
 .search-results {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 30px 15px;
     width: 40%;
     background-color: #E9EDC9;
@@ -330,9 +430,15 @@ header button {
 }
 
 .result-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     text-decoration: none;
     outline: none;
     color: #D4A373;
@@ -368,10 +474,19 @@ header button {
 .message, 
 .error {
     margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .message-icon {
@@ -379,8 +494,12 @@ header button {
 }
 
 .search-results__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     padding: 10px;
 }
 
@@ -395,6 +514,10 @@ header button {
 
 .search-results__pagination--next {
     margin-left: auto;
+}
+
+.search-results__count {
+    text-align: center;
 }
 
 /*Loader*/
@@ -445,6 +568,8 @@ header button {
 /*Recipe Uploader*/
 
 .overlay {
+    -webkit-transition: opacity .2s ease-in;
+    -o-transition: opacity .2s ease-in;
     transition: opacity .2s ease-in;
     opacity: 1;
     position: fixed;
@@ -453,18 +578,25 @@ header button {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
     z-index: 1;
 }
 
 .upload-modal__container {
     position: relative;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .upload-modal {
+    -webkit-transition: opacity .2s ease-in;
+    -o-transition: opacity .2s ease-in;
     transition: opacity .2s ease-in;
     opacity: 1;
     height: auto;
@@ -484,20 +616,35 @@ header button {
 }
 
 .upload-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;  
-    flex-direction: column;
+    -webkit-box-orient: vertical;  
+    -webkit-box-direction: normal;  
+        -ms-flex-direction: column;  
+            flex-direction: column;
 }
 
 .upload-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .upload-column {
     width: 40%;
     margin: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .upload-form label {
@@ -510,6 +657,28 @@ header button {
     border: none;
     padding: 5px;
     margin-bottom: 10px;
+}
+
+.ing-holder {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    margin-bottom: 5px;
+}
+
+.ing__input--qty,
+.ing__input--unit {
+    width: 15%;
+}
+
+.ing__input--desc {
+    width: 65%;
 }
 
 .upload-modal button {
@@ -531,6 +700,11 @@ header button {
     font-size: 125%;
 }
 
-
-
-
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    }
